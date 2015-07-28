@@ -71,7 +71,11 @@ class UsersController extends Controller
      */
     public function update($id)
     {
-        //
+        if($this->params['user']['password']) {
+          $this->params['user']['password'] = \Hash::make($this->params['user']['password']);
+        }
+        $this->user->update($this->params['user']);
+        return redirect()->back()->with('message', 'Account Updated Successfully!');
     }
 
     /**

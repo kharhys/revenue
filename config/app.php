@@ -145,6 +145,9 @@ return [
         'App\Providers\EventServiceProvider',
         'App\Providers\RouteServiceProvider',
         'Efficiently\AuthorityController\AuthorityControllerServiceProvider',
+        'App\Providers\ComposerServiceProvider',
+        Arrilot\Widgets\ServiceProvider::class,
+        Collective\Html\HtmlServiceProvider::class,
 
     ],
 
@@ -195,6 +198,12 @@ return [
         'View'      => 'Illuminate\Support\Facades\View',
         'Params'    => 'Efficiently\AuthorityController\Facades\Params',
         'Authority' => 'Efficiently\AuthorityController\Facades\Authority',
+
+        'Widget'       => Arrilot\Widgets\Facade::class,
+        'AsyncWidget'  => Arrilot\Widgets\AsyncFacade::class,
+
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
 
     ],
 

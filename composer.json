@@ -6,11 +6,14 @@
 	"type": "project",
 	"require": {
 		"laravel/framework": "5.1.*",
-		"efficiently/authority-controller": "2.1.*"
+		"efficiently/authority-controller": "2.1.*",
+		"arrilot/laravel-widgets": "dev-master",
+		"laravelcollective/html": "dev-master"
 	},
 	"require-dev": {
 		"phpunit/phpunit": "~4.0",
-		"phpspec/phpspec": "~2.1"
+		"phpspec/phpspec": "~2.1",
+		"laracasts/generators": "dev-master"
 	},
 	"autoload": {
 		"classmap": [

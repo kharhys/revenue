@@ -42,6 +42,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         return $this->hasMany('App\Authority\Permission');
     }
 
+
     public function hasRole($key)
     {
         $hasRole = false;
@@ -54,4 +55,31 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 
         return $hasRole;
     }
+
+    # accounts
+    public function accounts()
+    {
+        return $this->belongsToMany('App\Account');
+    }
+
+    # business accounts
+    public function businessAccounts()
+    {
+        return $this->accounts()->business();
+    }
+
+    # personal account: immutable
+    public function personalAccount()
+    {
+        return $this->belongsTo('App\Account');
+    }
+
+    # current account: mutable
+    public function agentAccount()
+    {
+        return $this->belongsTo('App\Account');
+    }
+
+
+
 }

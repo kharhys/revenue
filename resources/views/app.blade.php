@@ -1,62 +1,58 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Laravel</title>
+<html>
+	<head>
+		<link href='/css/semantic.css' rel='stylesheet' type='text/css'>
+		<link href='//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.0.1/components/icon.css' rel='stylesheet' type='text/css'>
 
-	<link href="/css/app.css" rel="stylesheet">
+		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.min.js"  type="text/javascript"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.0.1/semantic.min.js"  type="text/javascript"></script>
 
-	<!-- Fonts -->
-	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
+		<link href="/css/app.css" rel="stylesheet">
+	</head>
 
-	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-	<![endif]-->
-</head>
-<body>
-	<nav class="navbar navbar-default">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-					<span class="sr-only">Toggle Navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="#">Laravel</a>
+	<body>
+
+		<div id="header">@include('header')</div>
+
+	  <div id="window">
+			<div class="sidebar" id="leftsidebar"> @yield('rightsidebar') </div>
+	    <div id="viewport">
+				@if ((session()->has('message')))
+					<div class="ui yellow segment">
+						<p> <i class="ui info icon"></i> {{ session('message') }} </p>
+					</div>
+				@endif
+				@yield('content')
 			</div>
+	    <div  class="sidebar" id="rightsidebar"> @yield('leftsidebar') </div>
+	  </div>
+	  <footer class="app-footer">
+			<script type="text/javascript">
+				filterLocation = function(id){
+					if(id != 0) {
+					 console.log(id);
+					}
+					/* $.post('http://revenue.uasingishu.go.ke/v1/api/ui/filter',{FilterColumnID: target, SelectedID: id },function(data){
+						var targetEl = "[name='ColumnID[" + target + "]']";
+						var toAppend = '';
+						if (data.code == 200){
+							$.each(data.options,function(id,name){
+								toAppend += '<option value="'+id+'" selected>'+name+'</option>';
+							});
+						}
+						$(targetEl).html(toAppend);
+						$(targetEl).parent().dropdown('set text', 'select');
+					}); */
+				}
+				$(document).ready(function(){
+					$('.ui.dropdown').dropdown();
+				  $('.ui.accordion').accordion();
+					$('.menu .item').tab();
+				});
+			</script>
 
-			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				<ul class="nav navbar-nav">
-					<li><a href="/">Home</a></li>
-				</ul>
+		@yield('scripts')
+	</footer>
 
-				<ul class="nav navbar-nav navbar-right">
-					@if (Auth::guest())
-						<li><a href="/auth/login">Login</a></li>
-						<li><a href="/auth/register">Register</a></li>
-					@else
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>
-							<ul class="dropdown-menu" role="menu">
-								<li><a href="/auth/logout">Logout</a></li>
-							</ul>
-						</li>
-					@endif
-				</ul>
-			</div>
-		</div>
-	</nav>
+	</body>
 
-	@yield('content')
-
-	<!-- Scripts -->
-	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
-</body>
 </html>
