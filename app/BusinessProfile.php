@@ -11,14 +11,14 @@ class BusinessProfile extends Model
      *
      * @var string
      */
-    protected $table = 'business_profile';
+    protected $table = 'profiles';
 
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
-    protected $fillable = ['service_id', 'department_id','account_id', 'phone', 'email', 'website', 'address', 'code', 'subcounty', 'ward', 'zone'];
+    protected $fillable = ['service_id', 'account_id', 'phone', 'email', 'website', 'address', 'code', 'ward_id'];
 
 
     public function account()

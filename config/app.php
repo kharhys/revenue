@@ -148,6 +148,7 @@ return [
         'App\Providers\ComposerServiceProvider',
         Arrilot\Widgets\ServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
+        'Codesleeve\LaravelStapler\Providers\L5ServiceProvider'
 
     ],
 

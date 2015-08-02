@@ -16,9 +16,13 @@ class selectLocation extends AbstractWidget
     public function run()
     {
       $sub = \DB::table('subcounties')->lists('name', 'id');
-      $prompt = [0 => 'Subcounty'];
-      $subcounties = $prompt + $sub;
+      $promptsub = [0 => 'Select Subcounty'];
+      $subcounties = array_merge($promptsub, $sub);
 
-      return view("widgets.select_location", [ 'subcounties' => $subcounties ]);
+      $ward = \DB::table('subcounty_wards')->lists('name', 'id');
+      $promptward = [0 => 'Select Ward'];
+      $wards = array_merge($promptward, $ward);
+
+      return view("widgets.select_location", [ 'subcounties' => $subcounties, 'wards' => $wards  ]);
     }
 }

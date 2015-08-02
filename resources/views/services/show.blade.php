@@ -7,10 +7,16 @@
     <div class="ui attached segment">
       <div id="bottom" class="ui basic clearing segment">
         <h5 class="ui right floated header">
-          <a href="{{ route('account.create') }}" class="ui olive button"> Apply </a>
+          @if($service->department->domain->id != 1002)
+            <a href="{{ route('service.application.create', $service->id) }}" class="ui olive button"> Apply </a>
+          @else
+            <div class="ui basic segment subheader">
+               Available to <a href="{{url('dashboard/businesses')}}"> Business Accounts </a> Only 
+             </div>
+          @endif
         </h5>
         <h5 class="ui left floated header">
-          <div class="ui basic index button">  {{$service->name}}  </div>
+          <div class="ui basic segment subheader">  {{$service->name}}  </div>
         </h5>
       </div>
 
@@ -45,4 +51,9 @@
 
     </div>
   </div>
+@endsection
+
+
+@section('leftsidebar')
+  @widget('departments')
 @endsection

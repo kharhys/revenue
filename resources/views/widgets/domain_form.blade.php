@@ -15,6 +15,7 @@
       </a>
       <div class="content">
         {!! Form::model($domain->form, ['url' => 'form', 'class' => 'ui form']) !!}
+          {!! Form::hidden('domain_id', $domain->id) !!}
           <div class="field">
             {!! Form::label('name') !!}
             {!! Form::text('name', 'Form Name') !!}
@@ -25,12 +26,5 @@
     </div>
   </div>
 
-  @if (App\DomainForm::all()->count() > 0)
-    <div class="ui divider"> </div>
-    {!! Form::open(['route' => ['domain.update', $domain->id ], 'method' => 'PUT', 'class' => 'ui form']) !!}
-      @widget('formSelect')
-      {!! Form::submit('Save', ['class' => 'ui basic button']) !!}
-    {!! Form::close() !!}
-  @endif
 
 </div>

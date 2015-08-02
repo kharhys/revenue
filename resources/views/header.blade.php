@@ -1,10 +1,10 @@
-<div id="headerbar" class="ui clearing basic segment">
-  <h3 class="ui left floated header">
+<div id="headerbar" class="ui grid">
+  <div class="twelve wide column">
     <a href="{{url('/')}}" class="ui medium image">
       <img src="/images/logo.png" style="height: 4em;">
     </a>
-  </h3>
-  <h3 class="ui right floated header">
+  </div>
+  <div class="four wide column ">
     @if (Auth::user())
     <div class="ui two column grid">
       <div class="row">
@@ -15,23 +15,19 @@
               <i class="dropdown icon"></i>
               <div class="menu">
                 @foreach(Auth::user()->accounts as $account)
-                  <div class="item" data-value="{{$account->name}}">{{$account->name}}</div>
+                  <a href="{{url('dashboard/swap', $account->id)}}" class="item" data-value="{{$account->name}}">{{$account->name}}</a>
                 @endforeach
               </div>
             </div>
           </button>
         </div>
       </div>
-      <div class="two column row">
-        <div class="eleven wide column">
-          <button class="ui basic fluid button">
-            <a href="#"> My Account </a>
-          </button>
+      <div class="row">
+        <div class="eight wide column">
+          <a href="{{url('dashboard')}}" class="ui basic fluid button"> My Account </a>
         </div>
-        <div class="five wide column">
-          <button class="ui basic fluid button">
-            <a href="{{url('auth/logout')}}"> <i class="ui sign out icon"></i> </a>
-          </button>
+        <div class="eight wide column">
+          <a href="{{url('auth/logout')}}" class="ui basic fluid button"> <i class="ui sign out icon"></i> Log out </a>
         </div>
       </div>
     </div>
@@ -58,5 +54,5 @@
       </div>
     </div>
     @endif
-  </h3>
+  </div>
 </div>

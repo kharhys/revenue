@@ -18,7 +18,7 @@ class DomainFormController extends Controller {
     }
 
     # show the form for creating form
-    public function create() {
+    public function create() { dd($this);
       return view('forms.create');
     }
 

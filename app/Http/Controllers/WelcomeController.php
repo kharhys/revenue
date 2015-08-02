@@ -1,26 +1,17 @@
-<?php namespace App\Http\Controllers;
+<?php
 
-class WelcomeController extends Controller
-{
-    /*
-    |--------------------------------------------------------------------------
-    | Welcome Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller renders the "marketing page" for the application and
-    | is configured to only allow guests. Like most of the other sample
-    | controllers, you are free to modify or remove it as you desire.
-    |
-    */
+namespace App\Http\Controllers;
+use App\Ward;
 
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
+class WelcomeController extends Controller {
+
+    public function __construct()    {
         //$this->middleware('guest');
+    }
+
+    public function wards() {
+      $wards = Ward::where('subcounty_id', \Input::get('subcounty'))->get();
+      return $wards;
     }
 
     /**
@@ -28,8 +19,8 @@ class WelcomeController extends Controller
      *
      * @return Response
      */
-    public function index()
-    {
-        return view('welcome');
+    public function index()   {
+      $services = \DB::table('FeaturedServices')->get(['Title', 'ShortDecsription']);
+      return view('welcome', ['services' => $services]);
     }
 }

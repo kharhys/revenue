@@ -23,7 +23,7 @@
       </div>
     </div>
     <div class="ui bottom attached tab segment" data-tab="second">
-      @widget('domainForm', ['domain' => $domain ])
+       @widget('domainForm', ['domain' => $domain ])
     </div>
     <div class="ui bottom attached tab segment" data-tab="third">
       @widget('departmentCreate', [ 'domain' => $domain ])

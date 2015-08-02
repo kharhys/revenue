@@ -2,7 +2,7 @@
 
 @section('content')
   <div class="ui segment">
-      {!! Form::model($department, ['url' => 'department', 'class' => 'ui form']) !!}
+      {!! Form::model($department, ['route' => ['department.update', $department->id], 'method' => 'PUT', 'class' => 'ui form']) !!}
         <div class="field">
           {!! Form::label('name') !!}
           {!! Form::text('name', null) !!}

@@ -15,7 +15,7 @@ class ServiceController extends Controller {
     public function index(Request $request) {
       if( $request->get('department') ) {
         $services = \App\Service::filterByDepartment($request->get('department'))->get();
-        $departments = $services->toArray() ? $services[0]->department->domain->departments()->get() : [];
+        $departments = \App\Department::where('id', $request->get('department'))->get();
       } elseif( $request->get('domain') ) {
         $domain = \App\Domain::findOrfail($request->get('domain'));
         $services = $domain->services()->get();
@@ -23,13 +23,12 @@ class ServiceController extends Controller {
       } else {
         $services = $this->services;
         $departments = \App\Department::all();
-      } 
+      }
       return view('services.index', ['services' => $services, 'departments' => $departments ]);
     }
 
     # show the form for creating service
     public function create() {
-      dd($this);
       return view('services.create');
     }
 
@@ -79,7 +78,7 @@ class ServiceController extends Controller {
     {
       $this->service->fill($this->params['service']);
       if ($this->service->save()) {
-        return redirect()->back()->with('message', 'Service Added!');
+        return redirect()->back()->with('message', 'Service Updated!');
         } else {
           dd('error!');
       }

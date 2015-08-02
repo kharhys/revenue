@@ -17,7 +17,7 @@ class selectDepartment extends AbstractWidget
 
     public function run()
     {
-      $depts = Department::filterByDomain(9)->lists('name', 'id')->toArray();
+      $depts = Department::filterByDomain(1)->lists('name', 'id')->toArray();
       $prompt = [0 => 'Department'];
       $departments = $prompt + $depts;
 

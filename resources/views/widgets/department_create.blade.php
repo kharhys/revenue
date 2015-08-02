@@ -10,10 +10,14 @@
       <div class="content">
         <div class="ui divider"></div>
         {!! Form::open(['url' => 'department', 'class' => 'ui form']) !!}
-          {!! Form::hidden('domain_id', $domain) !!}
+          {!! Form::hidden('domain_id', $domain->id) !!}
           <div class="field">
             {!! Form::label('name') !!}
-            {!! Form::text('name', null) !!}
+            {!! Form::text('name') !!}
+          </div>
+          <div class="field">
+            {!! Form::label('synopsis') !!}
+            {!! Form::text('synopsis') !!}
           </div>
           {!! Form::submit('Save', ['class' => 'ui basic button']) !!}
         {!! Form::close() !!}

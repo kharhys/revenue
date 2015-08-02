@@ -11,14 +11,20 @@ class DomainForm extends Model
      *
      * @var string
      */
-    protected $table = 'forms';
+    protected $table = 'domain_forms';
 
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
-    protected $fillable = ['name'];
+    protected $fillable = ['name', 'domain_id'];
+
+    # domain
+    public function domain()
+    {
+        return $this->belongsTo('App\Domain');
+    }
 
     # sections of this form
     public function sections()

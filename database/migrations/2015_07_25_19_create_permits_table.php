@@ -14,7 +14,6 @@ class CreatePermitsTable extends Migration
     {
         Schema::create('invoices', function(Blueprint $table) {
             $table->increments('id');
-            $table->date('settled_at');
             $table->date('issued_at');
             $table->integer('account_id')->unsigned()->nullable();
             $table->foreign('account_id')->references('id')->on('accounts');

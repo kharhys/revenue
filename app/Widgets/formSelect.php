@@ -20,7 +20,7 @@ class formSelect extends AbstractWidget
     public function run()
     {
         return view("widgets.form_select", [
-            'forms' => \App\DomainForm::lists('name', 'id')->toArray()
+            'forms' => \App\DomainForm::lists('name', 'DomainID')->toArray()
         ]);
     }
 }

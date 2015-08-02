@@ -17,6 +17,8 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password', 60);
+            $table->integer('agent_account_id')->unsigned()->index();
+            $table->integer('personal_account_id')->unsigned()->index();
             $table->rememberToken();
             $table->timestamps();
         });

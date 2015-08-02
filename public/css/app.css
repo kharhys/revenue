@@ -5,20 +5,32 @@ html {
 body {
   height: 100% !important; /* 1, 3 */
   display: flex;
-  background: #EDEDED;
+  background: #FAFAFA;
   flex-direction: column;
+}
+footer.row {
+  margin: 0 6%;
+}
+
+
+#landing > div {
+  min-height: 100%;
 }
 
 .borderless.menu .header {
   text-transform: capitalize;
 }
 
+.sidebar a, .sidebar .item {
+  text-transform: capitalize !important;
+}
+
 table {
   border-radius: 0 !important;
 }
 #config {
-  margin-left: -0.6em;
-  padding: 1.2em;
+  margin-right: -0.6em;
+  padding: 1.4em 0;
 }
 #headerbar .small.button {
   padding: 5px;
@@ -28,16 +40,7 @@ table {
 #headerbar .menu.transition.visible {
   border-radius: 0;
 }
-#headerbar .row {
-  padding: 4px;
-}
-#headerbar > h3:last-of-type {
-  max-width: 10em;
-  margin: 0.6em 1em;
-}
-#headerbar > h3:first-of-type {
-  margin-bottom: 0;
-}
+
 #headerbar .buttons {
   border-radius: 0;
   border: none !important;
@@ -46,33 +49,28 @@ table {
   margin:  0.2em 0.5em;
   border-radius: 0;
   padding: 0.4em;
-  box-shadow: 0px 1px 4px rgba(99, 159, 167, 0.18);
+  box-shadow: 0px 1px 4px rgba(0, 17, 0, 0.18);
 }
 #headerbar a, #headerbar .text, #headerbar .active.item {
-  font-weight: 500;
+  font-weight: bold;
   font-size: 0.9em;
   text-transform: capitalize;
-  color: rgba(99, 159, 167, 0.7);
 }
 #headerbar .active.item {
   background: #fff;
 }
 #headerbar {
-  width: 90%;
-  margin: 0 auto;
-  padding: 0.4em;
+  width: 80%;
+  margin: 0.4em auto;
+  padding: 0.8em 0;
 }
 #header{
   flex: none;
   min-height: 4em;
   background: #fff;
-  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 5px 4px rgba(6, 6, 6, 0.3);
 }
 
-.app-header,
-.app-footer {
-  flex: none; /* 2 */
-}
 h4, h5, h6, label {
   color: rgba(0, 0, 0, 0.5) !important;
 }
@@ -81,27 +79,24 @@ h4, h5, h6, label {
 }
 
 #window {
-  width: 90%;
-  margin: 0 auto;
-  padding: 1em;
-  display: flex;
-  flex-direction: row;
+  width: 80%;
+  margin: 1em auto;
 }
 
 #viewport {
-  width: 60%;
+  width: 80%;
   margin: 0 1em;
   padding: 0.3em;
   padding-bottom: 2.3em;
   background: #FAFAFA;
   box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1);
 }
-
-.sidebar {
+#leftsidebar {
   width: 20%;
   padding: 0.3em;
-  background: #FAFAFA;
-  margin: 0.4em;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1);
+}
+.sidebar {
 }
 
 .ui.olive.dividing.header {
@@ -151,4 +146,31 @@ html *:not(.icon) {
 
 .ui.vertical.menu > .item:first-child, .ui.vertical.menu > .item:last-child {
   border-radius: 0;
+}
+
+#headerbar .row {
+  padding: 0
+}
+#headerbar .column {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.app-footer {
+  width: 91%;
+  margin: 0 auto;
+}
+
+#heading {
+  color: #21ba45;
+}
+
+
+#submit {
+  box-shadow: none;
+}
+
+#feature {
+  height: 30em;
+  overlow: auto !important;
 }

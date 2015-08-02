@@ -60,7 +60,12 @@ class DepartmentsController extends Controller {
      */
     public function update($id)
     {
-        //
+      $this->department->fill($this->params['department']);
+      if ($this->department->save()) {
+        return redirect()->back()->with('message', 'Department Updated!');
+        } else {
+          dd('error!');
+      }
     }
 
     /**

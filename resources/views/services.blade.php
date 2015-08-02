@@ -1,13 +1,11 @@
 @extends('app')
 
-
-
 @section('rightsidebar')
   @widget('dockets')
 @endsection
 
 @section('leftsidebar')
-  @widget('sidemenu')
+  @widget('departments')
 @endsection
 
 @section('scripts')

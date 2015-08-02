@@ -2,7 +2,7 @@
 
 namespace App\Widgets;
 
-use App\Domain;
+use App\Department;
 use Arrilot\Widgets\AbstractWidget;
 
 class departments extends AbstractWidget
@@ -18,12 +18,12 @@ class departments extends AbstractWidget
      * Treat this method as a controller action.
      * Return view() or other content to display.
      */
-    public function run(Domain $domains)
+    public function run(Department $departments)
     {
         //
 
         return view("widgets.departments", [
             'config' => $this->config,
-        ])->with(['domains' => $domains::all()]);
+        ])->with(['departments' => $departments::all()]);
     }
 }

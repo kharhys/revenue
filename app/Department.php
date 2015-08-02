@@ -11,14 +11,14 @@ class Department extends Model
      *
      * @var string
      */
-    protected $table = 'departments';
+    protected $table = 'service_departments';
 
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
-    protected $fillable = ['name', 'domain_id'];
+    protected $fillable = ['name', 'domain_id', 'synopsis'];
 
     # domain to which this department belongs
     public function domain()

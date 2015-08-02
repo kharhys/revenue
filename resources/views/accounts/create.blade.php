@@ -1,56 +1,72 @@
 @extends('dashboard')
 
 @section('content')
-<div class="ui segment">
-    {!! Form::open(['url' => 'account', 'class' => 'ui form']) !!}
+<div class="ui basic segment">
+    {!! Form::open(['url' => 'account', 'class' => 'ui form', 'enctype' => 'multipart/form-data']) !!}
       {!! Form::hidden('type', 'business') !!}
 
-    <h5 class="ui olive dividing header"> Business Registration Details </h5>
+    <h5 class="ui teal dividing header"> Business Registration Details </h5>
+    <div class="ui basic segment">
       <div class="required field">
-        {!! Form::label('name', 'Business Name') !!}
-        {!! Form::text('name', 'Business Name') !!}
+        {!! Form::label('name') !!}
+        {!! Form::text('name') !!}
       </div>
-      <div class="required inline field">
-        {!! Form::label('krapin', 'KRA PIN') !!}
-        {!! Form::file('krapin') !!}
+      <div class="two fields">
+        <div class="required field">
+          {!! Form::label('krapin', 'KRA PIN') !!}
+          {!! Form::file('krapin') !!}
+        </div>
+        <div class="required field">
+          {!! Form::label('certificate', 'Registration Certificate') !!}
+          {!! Form::file('certificate') !!}
+        </div>
       </div>
-      <div class="inline field">
-        {!! Form::label('permit', 'Business Permit') !!}
-        {!! Form::file('permit') !!}
+      <div class="ui accordion field">
+        <div class="title">
+          <i class="icon dropdown"></i>
+          Already have a permit?
+        </div>
+        <div class="content field">
+          {!! Form::label('permit', 'Business Permit') !!}
+          {!! Form::file('permit') !!}
+        </div>
       </div>
-      <div class="required inline field">
-        {!! Form::label('certificate', 'Registration Certificate') !!}
-        {!! Form::file('certificate') !!}
-      </div>
+    </div>
 
-      <h5 class="ui olive dividing header"> Business Activity Details </h5>
+    <h5 class="ui teal dividing header"> Business Activity Details </h5>
+    <div class="ui basic segment">
       @widget('selectDepartment')
       @widget('selectService')
+    </div>
 
-      <h5 class="ui olive dividing header"> Business Contact Details </h5>
+    <h5 class="ui teal dividing header"> Business Contact Details </h5>
+    <div class="ui basic segment">
       <div class="required field">
         {!! Form::label('phone', 'Phone Number') !!}
-        {!! Form::text('phone', 'Business Phone Number') !!}
+        {!! Form::text('phone') !!}
       </div>
       <div class="required field">
         {!! Form::label('email', 'Email Address') !!}
-        {!! Form::text('email', 'Business Email Address') !!}
+        {!! Form::text('email') !!}
       </div>
-      <div class="required field">
+      <div class="field">
         {!! Form::label('website', 'Website Address') !!}
-        {!! Form::text('website', 'Business Website Address') !!}
+        {!! Form::text('website') !!}
       </div>
       <div class="required field">
         {!! Form::label('address', 'Postal Address') !!}
-        {!! Form::text('address', 'Business Postal Address') !!}
+        {!! Form::text('address') !!}
       </div>
-
       @widget('selectCode')
+    </div>
 
-      <h5 class="ui olive dividing header"> Business Contact Details </h5>
+
+    <h5 class="ui teal dividing header"> Business Contact Details </h5>
+    <div class="ui basic segment">
       @widget('selectLocation')
+    </div>
 
-      {!! Form::submit('Save', ['class' => 'ui basic fluid button']) !!}
+      {!! Form::submit('Submit Application', ['class' => 'ui orange fluid button']) !!}
     {!! Form::close() !!}
 </div>
 @endsection

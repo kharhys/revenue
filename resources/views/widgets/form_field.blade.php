@@ -5,6 +5,8 @@
   {!! Form::textarea($field->id, old($field->id), [ 'rows' => 2 ]) !!}
 @elseif($field->type == 'select')
   {!! Form::select($field->id, DB::table($field->repository)->lists($field->key, 'id'), old($field->name) ? old($field->name) : null, ['class' => "ui dropdown"]) !!}
+@else
+  {!! Form::text($field->id, old($field->id)) !!}
 @endif
 
 @section('scripts')

@@ -1,15 +1,14 @@
-@extends('app')
-
-@section('rightsidebar')
-  @widget('dockets')
-@endsection
+@extends('dashboard')
 
 @section('content')
-<div class="ui attached segment">
+@include('setupmenu')
+<div class="ui segment">
   <h5 class="ui header"> careful </h5>
 </div>
 @endsection
 
 @section('leftsidebar')
-  @include('setupmenu')
+  <div  class="sidebar" id="rightsidebar">
+    @include('setupmenu')
+  </div>
 @endsection

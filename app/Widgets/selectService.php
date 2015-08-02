@@ -16,8 +16,8 @@ class selectService extends AbstractWidget
 
     public function run()
     {
-      $domain = Domain::findOrFail(9);
-      $values = $domain->services()->get(['services.name', 'services.id']);
+      $domain = Domain::findOrFail(1);
+      $values = $domain->services()->get(['finance_bill.name', 'finance_bill.id']);
       $vals = [];
       if($values) {
         foreach($values as $v) {
@@ -25,7 +25,7 @@ class selectService extends AbstractWidget
         }
       }
       $prompt = [0 => 'Service'];
-      $services = $prompt + $vals;
+      $services = array_merge($prompt,$vals);
 
       return view("widgets.select_service", [ 'services' => $services ]);
     }

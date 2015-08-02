@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 use App\BusinessProfile;
+use App\ServiceApplication;
 
 class AccountController extends Controller {
 
@@ -36,17 +37,13 @@ class AccountController extends Controller {
     }
 
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @return Response
-     */
+    # store new business account
     public function store()
     {
       $this->account->fill($this->params['account']);
-
       if ($this->account->save()) {
 
+        # store business account profile
         $profile = BusinessProfile::create([
           'code' => $this->params['account']['code'],
           'phone' => $this->params['account']['phone'],
@@ -60,7 +57,18 @@ class AccountController extends Controller {
         $this->account->businessProfile()->save($profile);
         $this->account->users()->sync([$this->currentUser->id], false);
 
-        return redirect()->back()->with('message', 'account Added!');
+        # submit application for sbp
+        $application = ServiceApplication::create([
+          'FormID' => 2,
+          'ServiceID' => 303,
+          'ServiceStatusID' => 1,
+          'SubmissionDate' => date('Y-m-d H:i:s'),
+          'CustomerID' => $this->currentUser->agentAccount->id
+        ]);
+
+        $application->save();
+
+        return redirect('/dashboard/businesses')->with('message', 'Business Account Added!');
 
         } else {
           dd('error!');
@@ -88,7 +96,7 @@ class AccountController extends Controller {
     {
       $this->account->fill($this->params['account']);
       if ($this->account->save()) {
-        return redirect()->back()->with('message', 'account Added!');
+        return redirect()->back()->with('message', 'Account Updated!');
         } else {
           dd('error!');
       }

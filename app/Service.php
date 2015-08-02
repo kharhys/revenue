@@ -11,14 +11,16 @@ class Service extends Model
      *
      * @var string
      */
-    protected $table = 'services';
+    protected $table = 'finance_bill';
+
+    protected $primaryKey = 'ServiceID';
 
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
-    protected $fillable = ['name', 'synopsis', 'department_id', 'domain_id'];
+    protected $fillable = ['name', 'synopsis', 'department_id', 'domain_id', 'docket_id'];
 
     # filter by department
     public function scopeFilterByDepartment($query, $department) {
@@ -32,7 +34,7 @@ class Service extends Model
     }
 
     # domain to which this service belongs
-    public function domaint()
+    public function domain()
     {
         return $this->belongsTo('App\Domain');
     }
@@ -41,6 +43,12 @@ class Service extends Model
     public function sections()
     {
         return $this->hasMany('App\Section');
+    }
+
+    # form sections for this service
+    public function fees()
+    {
+        return $this->hasMany('App\Fee');
     }
 
     # all form fields belonging to this service

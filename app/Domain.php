@@ -18,12 +18,12 @@ class Domain extends Model
      *
      * @var array
      */
-    protected $fillable = ['name', 'docket_id', 'form_id'];
+    protected $fillable = ['name', 'docket_id'];
 
-    # service form
-    public function form()
+    # domain to which this department belongs
+    public function docket()
     {
-        return $this->belongsTo('App\DomainForm');
+        return $this->belongsTo('App\Docket');
     }
 
     # departments in this domain

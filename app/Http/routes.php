@@ -4,6 +4,7 @@
 
 Route::get('/', 'WelcomeController@index');
 Route::get('dashboard', 'DashboardController@index');
+Route::get('wards', 'WelcomeController@wards');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
@@ -13,6 +14,7 @@ Route::controllers([
 
 Route::resource('form', 'DomainFormController');
 Route::resource('field', 'FieldController');
+Route::resource('fee', 'FeeController');
 Route::resource('user', 'UsersController');
 Route::resource('domain', 'DomainsController');
 Route::resource('docket', 'DocketController');

@@ -66,7 +66,7 @@ class DomainsController extends Controller {
      * @return Response
      */
     public function update($id)
-    {
+    { dd($this);
       $this->domain->fill($this->params['domain']);
       if ($this->domain->save()) {
           return redirect()->back()->with('message', 'Service Domain Updated!');

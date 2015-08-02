@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 use App\BusinessProfile;
+use App\ServiceApplication;
 
 class PlotController extends Controller {
 
@@ -46,20 +47,17 @@ class PlotController extends Controller {
 
       if ($this->plot->save()) {
 
-        $profile = BusinessProfile::create([
-          'code' => $this->params['plot']['code'],
-          'phone' => $this->params['plot']['phone'],
-          'email' => $this->params['plot']['email'],
-          'website' => $this->params['plot']['website'],
-          'address' => $this->params['plot']['address'],
-          'service_id' => $this->params['plot']['service_id'],
-          'department_id' => $this->params['plot']['department_id']
+        $application = ServiceApplication::create([
+          'FormID' => 3,
+          'ServiceID' => 1603,
+          'ServiceStatusID' => 1,
+          'SubmissionDate' => date('Y-m-d H:i:s'),
+          'CustomerID' => $this->currentUser->agentAccount->id
         ]);
 
-        $this->plot->businessProfile()->save($profile);
-        $this->plot->users()->sync([$this->currentUser->id], false);
+        $application->save();
 
-        return redirect()->back()->with('message', 'plot Added!');
+        return redirect('/dashboard')->with('message', 'Application Submitted!');
 
         } else {
           dd('error!');

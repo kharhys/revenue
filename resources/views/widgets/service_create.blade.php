@@ -12,6 +12,7 @@
         {!! Form::open(['url' => 'service', 'class' => 'ui form']) !!}
           {!! Form::hidden('department_id', $department->id) !!}
           {!! Form::hidden('domain_id', $department->domain->id ) !!}
+          {!! Form::hidden('docket_id', $department->domain->docket->id) !!}
           <div class="field">
             {!! Form::label('name') !!}
             {!! Form::text('name') !!}
