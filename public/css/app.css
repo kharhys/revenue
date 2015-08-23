@@ -174,3 +174,21 @@ html *:not(.icon) {
   height: 30em;
   overlow: auto !important;
 }
+
+#navigation-partial {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  resize: vertical;
+}
+
+#header .row {
+  padding: 0;
+}
+
+#header-partial {
+  width: 80%;
+  margin: 0 auto;
+  border-left: none;
+  border-right: none;
+}
