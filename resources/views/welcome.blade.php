@@ -14,20 +14,7 @@
 
 		<header id="header" class="row">
 			@widget('header')
-		</header>
-		<header id="header" class="row">
-			<h3 id="heading" class="ui center aligned header">
-				<img id="logo-img" src="{{asset('images/logo.png')}}" class="ui tiny image">
-				<div class="content">
-					THE COUNTY GOVERNMENT OF UASIN GISHU SELF HELP PORTAL
-					<div class="sub header">
-						<a target='_blank' href="http://uasingishu.go.ke/">
-							website
-							<i class="external icon"></i>
-						</a>
-					</div>
-				</div>
-			</h3>
+			@widget('contact')
 		</header>
 
 
