@@ -13,6 +13,9 @@
 	<body>
 
 		<header id="header" class="row">
+			@widget('header')
+		</header>
+		<header id="header" class="row">
 			<h3 id="heading" class="ui center aligned header">
 				<img id="logo-img" src="{{asset('images/logo.png')}}" class="ui tiny image">
 				<div class="content">
@@ -26,6 +29,7 @@
 				</div>
 			</h3>
 		</header>
+
 
 	  <div id="window">
 			<div class="ui attached segment two column divided grid">
