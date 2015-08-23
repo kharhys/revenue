@@ -20,7 +20,7 @@ class WelcomeController extends Controller {
      * @return Response
      */
     public function index()   {
-      $services = \DB::table('FeaturedServices')->get(['Title', 'ShortDecsription']);
-      return view('welcome', ['services' => $services]);
+     // $services = \DB::table('FeaturedServices')->get(['Title', 'ShortDecsription']);
+      return view('welcome');
     }
 }
