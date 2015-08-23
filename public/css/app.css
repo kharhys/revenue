@@ -79,7 +79,7 @@ h4, h5, h6, label {
 }
 
 #window {
-  width: 78%;
+  width: 80%;
   margin: 1em auto;
 }
 
@@ -221,9 +221,9 @@ html *:not(.icon) {
 
 .gallery-cell {
   width: 100%;
-  height: 250px;
+  height: 200px;
   margin-right: 10px;
-  background: #d9e778;
+  background: #EABEA2;
   counter-increment: gallery-cell;
 }
 

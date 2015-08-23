@@ -21,13 +21,9 @@
 
 
 	  <div id="window">
-		<div class="gallery js-flickity" data-flickity-options='{ "autoPlay": true }'>
-		  <div class="gallery-cell"></div>
-		  <div class="gallery-cell"></div>
-		  <div class="gallery-cell"></div>
-		  <div class="gallery-cell"></div>
-		  <div class="gallery-cell"></div>
-		</div>
+		@widget('carousel')
+		<div class="ui section divider"></div>
+		@widget('overview')
 	  </div>
 
 	  <footer class="app-footer">
