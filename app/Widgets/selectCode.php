@@ -15,7 +15,7 @@ class selectCode extends AbstractWidget
 
     public function run()
     {
-      $code = \DB::table('PostalCodes')->lists('PostalCodeName', 'PostalCodeID');
+      $code = \DB::table('postalcodes')->lists('code', 'id');
       $prompt = [0 => 'Postal Code'];
       $codes = $prompt + $code;
 

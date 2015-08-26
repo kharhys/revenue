@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePostalCodeTable extends Migration
+class CreateApplicationTypesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,9 +12,10 @@ class CreatePostalCodeTable extends Migration
      */
     public function up()
     {
-        Schema::create('postal_code', function(Blueprint $table) {
+        Schema::create('application_types', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('code');
+            $table->string('name');
+            $table->string('description');
             $table->timestamps();
         });
     }
@@ -26,6 +27,6 @@ class CreatePostalCodeTable extends Migration
      */
     public function down()
     {
-        Schema::drop('postal_code');
+        Schema::drop('application_types');
     }
 }

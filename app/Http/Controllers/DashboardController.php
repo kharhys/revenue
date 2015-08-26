@@ -14,13 +14,7 @@ class DashboardController extends Controller {
 
     # render dashboard
     public function index() {
-      $applications = \DB::table('ServiceHeader')
-            ->where('ServiceHeader.CustomerID', $this->currentUser->agentAccount->id)
-            ->join('Services', 'ServiceHeader.ServiceID', '=', 'Services.ServiceID')
-            ->join('ServiceStatus', 'ServiceHeader.ServiceStatusID', '=', 'ServiceStatus.ServiceStatusID')
-            ->select('ServiceHeader.*', 'Services.ServiceName', 'ServiceStatus.ServiceStatusName')
-            ->get();
-        return view('dashboard.index', ['applications' => $applications]);
+        return view('dashboard.index');
     }
 
     # config app
@@ -50,5 +44,10 @@ class DashboardController extends Controller {
     # config app
     public function getConfig() {
         return view('config');
+    }
+
+    # render workspace
+    public function getWorkspace() {
+        return view('dashboard.workspace');
     }
 }

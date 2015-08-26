@@ -11,6 +11,8 @@ class Role extends Model
      *
      * @var string
      */
-    protected $table = 'role';
+    protected $table = 'roles';
+
+    protected $fillable = ['name'];
 
 }

@@ -1,4 +1,6 @@
-<?php namespace App\Http\Controllers\Auth;
+<?php 
+
+namespace App\Http\Controllers\Auth;
 
 use App\User;
 use Validator;
@@ -36,7 +38,7 @@ class AuthController extends Controller
             'mobile' => 'required',
             'address' => 'required',
             'code' => 'required',
-            'email' => 'required|confirmed|email|max:255|unique:user',
+            'email' => 'required|confirmed|email|max:255|unique:users',
             'password' => 'required|confirmed|min:6',
         ]);
     }

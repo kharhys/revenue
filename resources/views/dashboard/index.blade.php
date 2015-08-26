@@ -1,30 +1,32 @@
-@extends('dashboard')
+@extends('dashboard.layout')
 
-@section('content')
-<div class="ui basic segment">
-  @if (count($applications) > 0)
-  <table class="ui small table">
-    <thead>
-      <tr>
-        <th>Service Name</th>
-        <th>Submissionn Date</th>
-        <th>Service Status </th>
-      </tr>
-    </thead>
-    <tbody>
-      @foreach ($applications as $application)
-      <tr>
-        <td>{{$application->ServiceName}}</td>
-        <td>{{$application->SubmissionDate}}</td>
-        <td>{{$application->ServiceStatusName}}</td>
-      </tr>
-      @endforeach
-    </tbody>
-  </table>
-  @else
-  <div class="ui padded orange segment">
-    <h5 class="subheader"> You have not applied for any services yet </h5>
+@section('menu')
+  <a class="active item" data-tab="first"> Alerts  </a>
+  <a class="item" data-tab="second">  Applications </a>
+  <a class="item" data-tab="third">  Profile </a>
+  <a class="item" data-tab="four">  Accounts </a>
+@endsection
+
+@section('viewport')
+  This is the Dashboard for the logged in user
+  <div class="ui basic active tab segment" data-tab="first">
+    Alerts
   </div>
-  @endif
-</div>
+  <div class="ui basic tab segment" data-tab="second">
+    Applications
+  </div>
+  <div class="ui basic tab segment" data-tab="third">
+    Profile
+  </div>
+  <div class="ui basic tab segment" data-tab="four">
+    Accounts
+  </div>
+@endsection
+
+@section('scripts')
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#dashboard-anchor').addClass('active');
+    });
+  </script>
 @endsection

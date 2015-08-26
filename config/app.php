@@ -148,7 +148,9 @@ return [
         'App\Providers\ComposerServiceProvider',
         Arrilot\Widgets\ServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
-        'Codesleeve\LaravelStapler\Providers\L5ServiceProvider'
+        'Codesleeve\LaravelStapler\Providers\L5ServiceProvider',
+        Mpociot\Teamwork\TeamworkServiceProvider::class,
+        App\Providers\RootUSerProvider::class
 
     ],
 

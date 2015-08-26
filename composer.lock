@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "9f540dd331e8a83252abfb8dcdf27be7",
+    "hash": "7a419009adffd33fb5f2069fbebed707",
     "packages": [
         {
             "name": "arrilot/laravel-widgets",
@@ -1101,6 +1101,54 @@
                 "psr-3"
             ],
             "time": "2015-08-09 17:44:44"
+        },
+        {
+            "name": "mpociot/teamwork",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mpociot/teamwork.git",
+                "reference": "a2cc1bb3476ba26a7699c06c534fdbeb64432c5f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mpociot/teamwork/zipball/a2cc1bb3476ba26a7699c06c534fdbeb64432c5f",
+                "reference": "a2cc1bb3476ba26a7699c06c534fdbeb64432c5f",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~5.0",
+                "php": ">=5.5.9"
+            },
+            "require-dev": {
+                "illuminate/database": "~5.0",
+                "mockery/mockery": "dev-master",
+                "phpunit/phpunit": "~4.1",
+                "sami/sami": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Mpociot\\Teamwork": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Marcel Pociot",
+                    "email": "m.pociot@gmail.com"
+                }
+            ],
+            "description": "User to Team associations for the Laravel 5 Framework",
+            "homepage": "http://github.com/mpociot/teamwork",
+            "keywords": [
+                "Invite",
+                "Teams"
+            ],
+            "time": "2015-08-07 07:18:43"
         },
         {
             "name": "mtdowling/cron-expression",
@@ -3266,6 +3314,7 @@
         "arrilot/laravel-widgets": 20,
         "laravelcollective/html": 20,
         "codesleeve/laravel-stapler": 20,
+        "mpociot/teamwork": 20,
         "laracasts/generators": 20
     },
     "prefer-stable": true,

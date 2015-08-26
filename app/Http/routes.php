@@ -12,6 +12,7 @@ Route::controllers([
 	'password' => 'Auth\PasswordController',
 ]);
 
+Route::resource('workflow', 'WorkflowController');
 Route::resource('form', 'DomainFormController');
 Route::resource('field', 'FieldController');
 Route::resource('fee', 'FeeController');

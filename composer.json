@@ -9,7 +9,8 @@
 		"efficiently/authority-controller": "2.1.*",
 		"arrilot/laravel-widgets": "dev-master",
 		"laravelcollective/html": "dev-master",
-		"codesleeve/laravel-stapler": "dev-master"
+		"codesleeve/laravel-stapler": "dev-master",
+		"mpociot/teamwork": "dev-master"
 	},
 	"require-dev": {
 		"phpunit/phpunit": "~4.0",

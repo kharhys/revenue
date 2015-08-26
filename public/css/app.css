@@ -8,9 +8,7 @@ body {
   background: #ffffff;
   flex-direction: column;
 }
-footer.row {
-  margin: 0 6%;
-}
+
 
 
 #landing > div {
@@ -81,6 +79,10 @@ h4, h5, h6, label {
 #window {
   width: 80%;
   margin: 1em auto;
+  margin-top: 2em;
+  padding-top: 2em;
+  margin-bottom: 4em;
+  border-top: 1px solid rgba(34, 36, 38, 0.15);
 }
 
 
@@ -135,7 +137,7 @@ input, textarea {
 }
 
 html *:not(.icon) {
-   font-family: Roboto !important;
+   font-family: 'PT Sans Narrow', sans-serif;
 }
 
 .ui.segment {
@@ -158,10 +160,6 @@ html *:not(.icon) {
   padding-bottom: 0;
 }
 
-.app-footer {
-  width: 91%;
-  margin: 0 auto;
-}
 
 #heading {
   color: #21ba45;
@@ -202,17 +200,35 @@ html *:not(.icon) {
 }
 
 #contact-partial {
-  margin: 0;
-  padding: 0;
   background: #fafafa;
-}
-
-#contact-partial  h3 {
-  margin: 0;
+  border-top: 1px solid rgba(34, 36, 38, 0.15);
 }
 
 #contact-partial  a {
   font-weight: normal;
+}
+
+#contact-partial  a.active {
+  color: #E6A968;
+  font-weight: bold;
+  border-color: #E6A968;
+}
+
+#contact-partial span:hover, #contact-partial span.active {
+  background: none;
+  font-weight: normal;
+  border-color: rgba(34, 36, 38, 0);
+  color: rgba(0, 0, 0, 0.87);
+}
+
+#contact-partial span {
+  padding: 0 5px;
+  margin-bottom: 10px;
+  border-right: 1px solid rgba(34, 36, 38, 0.5);
+}
+
+#contact-partial span a {
+  margin-bottom: -2px;
 }
 
 .gallery {
@@ -221,7 +237,7 @@ html *:not(.icon) {
 
 .gallery-cell {
   width: 100%;
-  height: 200px;
+  height: 300px;
   margin-right: 10px;
   background: #EABEA2;
   counter-increment: gallery-cell;
@@ -235,4 +251,92 @@ html *:not(.icon) {
   line-height: 200px;
   font-size: 80px;
   color: white;
+}
+
+
+#footer-partial {
+  background: #fafafa;
+  border-top: 1px solid rgba(34, 36, 38, 0.15);
+}
+
+#footer-partial > div {
+  width: 80%;
+  margin: 0 auto;
+}
+
+#login-partial {
+  background: #d5d5d5 url('siaya.jpg') no-repeat;
+  background-size: 100% auto;
+}
+
+#sess-partial .menu {
+  min-width: 103%;
+}
+
+.ui.secondary.vertical.menu > .item {
+  border-radius: 0 !important;
+}
+
+button:focus {outline:0;}
+
+#dashboard-sidebar > button {
+  width: 100%;
+  text-align: left;
+}
+
+
+.courses {
+  margin-bottom: 15px;
+  font-size: 0;
+  padding: 0;
+  background: whitesmoke;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.courses li {
+  font-size: 14px;
+  width: 48%;
+  margin: 1%;
+  display: flex;
+  padding: 0.5em;
+  background: #fff;
+}
+
+.courses div:hover {
+}
+
+.courses .mix-target {
+  display: none;
+}
+
+.service-writeup {
+  padding: 0.6em;
+}
+
+.service-writeup > div {
+  text-align: right;
+  flex: 1 0 auto;
+}
+.list-content {
+  padding: 0.5em;
+}
+
+.ui.secondary.menu .active.item,
+.ui.secondary.menu .item:hover {
+  background: #E6A968;
+  color: #fff;
+}
+
+.ui.vertical.tabular.menu .active.item {
+  border-radius: 0 !important;
+}
+
+#dashboard-viewport {
+  padding: 0;
+}
+
+#dashboard-viewport > .segment {
+  margin: 0;
+  padding: 0;
 }
